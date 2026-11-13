@@ -8,7 +8,7 @@ Checked on 12 Nov 2026 (all times UTC). Public RPC (`https://mainnet-rpc.rayls.c
 - When a wallet's next transaction (next nonce, same epoch) landed in a different block, the same validator included it:
   **14.4 %** before (177 of 1,227; chance with 7 validators is 14.3 %), **91.4 %** after (1,080 of 1,181), **87.9 %** on 11 to 12 Nov with 8 validators (886 of 1,008). In 3-hour bins: 10.7 % just before the block, 91.5 % just after.
 - The owner rotates: the price-feed wallet `0x339d…0749` changed validator **62 times** between 10 Oct 14:57 and 12 Oct 13:57 UTC, one hand-off every **2,055 blocks, 45.5 minutes**. The code constant is `OWNER_ROTATION_BLOCKS = 2048` executed anchors.
-- The ring order is not published. Rebuilt from the registry (validators sorted by BLAKE3 of their BLS key, as the code does), it matches the order seen on chain in October (7 validators) and November (8).
+- The ring order is not published. Rebuilt from the registry (validators sorted by BLAKE3 of their BLS key, as the code does), it matches the order seen onchain in October (7 validators) and November (8).
 - Live test: at 22:54:48 UTC on 12 Nov, `ring-check.ps1` predicted that my test wallet `0x6f97…e9a2` would be served by `0x0808…41bc7`. Three zero-value transfers at 22:59 UTC landed in blocks 14,376,417, 14,376,426 and 14,376,436, all mined by `0x0808…41bc7`.
 
 ## Documented, independently verified, my analysis, not verified
