@@ -1,0 +1,58 @@
+﻿
+Rayls Public Chain: which validator includes a wallet's transactions
+Fork SenderAffinityLoadBalancing at block 12,231,705 (10 Oct 2026 14:22:07 UTC)
+run at 2026-11-12 21:00:30 UTC
+
+== BEFORE: 2026-10-08 14:22:21 to 2026-10-10 14:17:35 UTC | 2177 transactions | 7 validators ==
+   next transaction from the same wallet, different block, SAME validator: 177 of 1227 = 14.4 %   (chance: 1 in 7 = 14.3 %)
+   oracle bursts (setPrice, 2+ transactions within 60 s) on ONE validator: 218 of 493 = 44.2 %
+
+== AFTER: 2026-10-10 14:22:30 to 2026-10-12 14:17:27 UTC | 2092 transactions | 7 validators ==
+   next transaction from the same wallet, different block, SAME validator: 1080 of 1181 = 91.4 %   (chance: 1 in 7 = 14.3 %)
+   oracle bursts (setPrice, 2+ transactions within 60 s) on ONE validator: 496 of 498 = 99.6 %
+
+== RECENT: 2026-11-11 18:40:04 to 2026-11-12 18:46:13 UTC | 1557 transactions | 8 validators ==
+   next transaction from the same wallet, different block, SAME validator: 886 of 1008 = 87.9 %   (chance: 1 in 8 = 12.5 %)
+   oracle bursts (setPrice, 2+ transactions within 60 s) on ONE validator: 258 of 278 = 92.8 %
+
+== Oracle wallet after the fork: which validator, and for how long ==
+   0xfc1822  from block 12231722  2026-10-10 14:22:30 UTC  34 transactions
+   0x17a974  from block 12233307  2026-10-10 14:57:37 UTC  30 transactions
+   0xeecf1a  from block 12235329  2026-10-10 15:42:23 UTC  38 transactions
+   0xba7444  from block 12237371  2026-10-10 16:27:39 UTC  32 transactions
+   0x90aed9  from block 12239601  2026-10-10 17:17:00 UTC  27 transactions
+   0xc2afe6  from block 12241656  2026-10-10 18:02:35 UTC  26 transactions
+   0x080857  from block 12243676  2026-10-10 18:47:24 UTC  23 transactions
+   0xfc1822  from block 12245700  2026-10-10 19:32:25 UTC  27 transactions
+   0x17a974  from block 12247727  2026-10-10 20:17:16 UTC  18 transactions
+   0xeecf1a  from block 12249758  2026-10-10 21:02:20 UTC  20 transactions
+   62 handoffs between 2026-10-10 14:57:37 and 2026-10-12 13:57:36 UTC: 2055 blocks and 45.5 minutes per handoff (code: OWNER_ROTATION_BLOCKS = 2048)
+
+== Last 24 hours: oracle wallet, every change of validator in order (first 18) ==
+   0xeecf1a  from block 14300511  2026-11-11 18:41:07 UTC  19 transactions
+   0xba7444  from block 14301863  2026-11-11 19:11:22 UTC  23 transactions
+   0x90aed9  from block 14303869  2026-11-11 19:56:08 UTC  32 transactions
+   0xbbd0b3  from block 14305873  2026-11-11 20:41:09 UTC  1 transactions
+   0xc2afe6  from block 14305875  2026-11-11 20:41:12 UTC  2 transactions
+   0xbbd0b3  from block 14306109  2026-11-11 20:46:26 UTC  1 transactions
+   0xc2afe6  from block 14306111  2026-11-11 20:46:29 UTC  2 transactions
+   0xbbd0b3  from block 14306323  2026-11-11 20:51:13 UTC  3 transactions
+   0xc2afe6  from block 14306326  2026-11-11 20:51:17 UTC  5 transactions
+   0xbbd0b3  from block 14306559  2026-11-11 20:56:30 UTC  15 transactions
+   0xc2afe6  from block 14307014  2026-11-11 21:06:35 UTC  3 transactions
+   0xbbd0b3  from block 14307215  2026-11-11 21:11:06 UTC  1 transactions
+   0xc2afe6  from block 14307218  2026-11-11 21:11:10 UTC  2 transactions
+   0xbbd0b3  from block 14307450  2026-11-11 21:16:22 UTC  1 transactions
+   0xc2afe6  from block 14307454  2026-11-11 21:16:25 UTC  7 transactions
+   0xbbd0b3  from block 14307666  2026-11-11 21:21:06 UTC  2 transactions
+   0xc2afe6  from block 14307895  2026-11-11 21:26:13 UTC  39 transactions
+   0x080857  from block 14309908  2026-11-11 22:11:24 UTC  54 transactions
+
+== Last 24 hours: windows of the newest validator 0xbbd0b352 ==
+   2026-11-11 20:41:09 to 2026-11-11 21:21:06 UTC: oracle transactions 45 | by 0xbbd0b3: 24 | by next validator 0xc2afe6: 21
+   2026-11-12 02:51:25 to 2026-11-12 03:31:25 UTC: oracle transactions 34 | by 0xbbd0b3: 24 | by next validator 0xc2afe6: 10
+   2026-11-12 08:56:19 to 2026-11-12 09:36:05 UTC: oracle transactions 31 | by 0xbbd0b3: 26 | by next validator 0xc2afe6: 5
+   2026-11-12 15:06:31 to 2026-11-12 15:46:24 UTC: oracle transactions 42 | by 0xbbd0b3: 24 | by next validator 0xc2afe6: 18
+   total: 152 oracle transactions | by 0xbbd0b3: 98 | by another validator: 54
+
+Read-only. Nothing was sent, nothing was signed.

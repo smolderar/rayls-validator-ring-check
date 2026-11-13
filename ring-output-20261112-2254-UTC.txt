@@ -1,0 +1,51 @@
+﻿
+Rayls Public Chain: the validator ring, rebuilt from the registry and the code
+run at 2026-11-12 22:54:48 UTC
+
+== ConsensusRegistry 0x07e17e17e17e17e17e17e17e17e17e17e17e17e1, epoch 197: 8 committee validators ==
+   slot  authority id = BLAKE3(BLS key)   BLS key bytes   validator (block miner)
+      0  0x15bc4f24bcc46d6a...        96             0xba74449591e403e012351095b566cf15417c2930
+      1  0x5f1f0471ecc06665...        96             0x90aed90ede55e7f784523303e12f3457d6337789
+      2  0x752b2f51baf259d9...        96             0xbbd0b35294fff3981a7aeb2adb14f23f93bf9662
+      3  0x872d5544695e2290...        96             0xc2afe610a7cecc44ef8604fe9421271fe2990fe6
+      4  0x89b4f777d6b11fe3...        96             0x080857747a9baa9f53a68a20cd1e13b691641bc7
+      5  0xa834f486d88a6cba...        96             0xfc182245c87ab48b6a10e36fd262790de73707af
+      6  0xc2cbe567fd8a93ef...        96             0x17a9747596427f4960d5c494417ce6bf8b82bafe
+      7  0xedfac3dace8f5716...        96             0xeecf1a05b55e27c19d999471376192880aaa78bc
+   ring order from the code: 0xba744495 -> 0x90aed90e -> 0xbbd0b352 -> 0xc2afe610 -> 0x08085774 -> 0xfc182245 -> 0x17a97475 -> 0xeecf1a05 -> (back to start)
+
+== Order in which the price wallet met each validator (step1-data.csv) ==
+   AFTER  0xfc182245 -> 0x17a97475 -> 0xeecf1a05 -> 0xba744495 -> 0x90aed90e -> 0xc2afe610 -> 0x08085774
+          same cyclic order as the ring from the code: YES
+   RECENT 0xeecf1a05 -> 0xba744495 -> 0x90aed90e -> 0xbbd0b352 -> 0xc2afe610 -> 0x08085774 -> 0xfc182245 -> 0x17a97475
+          same cyclic order as the ring from the code: YES
+
+== Where the price wallet is on the ring right now ==
+   chain head block 14376210 at 2026-11-12 22:54:49 UTC, last 2048 blocks took 1.34 s per block
+   price wallet natural slot = FxHash mod 8 = 5
+   latest price updates (newest first):
+     block 14376057  2026-11-12 22:51:24 UTC  nonce 334939  included by 0x08085774  (slot 4)
+     block 14376056  2026-11-12 22:51:24 UTC  nonce 334938  included by 0x08085774  (slot 4)
+     block 14376055  2026-11-12 22:51:24 UTC  nonce 334937  included by 0x08085774  (slot 4)
+     block 14376053  2026-11-12 22:51:21 UTC  nonce 334936  included by 0x08085774  (slot 4)
+     block 14375829  2026-11-12 22:46:19 UTC  nonce 334933  included by 0x08085774  (slot 4)
+     block 14375829  2026-11-12 22:46:19 UTC  nonce 334934  included by 0x08085774  (slot 4)
+     block 14375829  2026-11-12 22:46:19 UTC  nonce 334935  included by 0x08085774  (slot 4)
+     block 14375827  2026-11-12 22:46:18 UTC  nonce 334932  included by 0x08085774  (slot 4)
+     block 14375825  2026-11-12 22:46:15 UTC  nonce 334931  included by 0x08085774  (slot 4)
+     block 14375621  2026-11-12 22:41:41 UTC  nonce 334929  included by 0xc2afe610  (slot 3)
+     block 14375621  2026-11-12 22:41:41 UTC  nonce 334930  included by 0xc2afe610  (slot 3)
+     block 14375619  2026-11-12 22:41:38 UTC  nonce 334927  included by 0xc2afe610  (slot 3)
+   now on slot 4 (0x08085774), so the window number mod 8 = (4 - 5) mod 8 = 7
+   this window began by block 14375825 (2026-11-12 22:46:15 UTC); next hand-off expected near block 14377880, in about 37 minutes (around 23:32 UTC), to slot 5 -> 0xfc182245
+
+== My wallet 0x6f97e65f95a893e06a040a5200fd9493880ae9a2 ==
+   FxHash = 13809601191590027773, natural slot = FxHash mod 8 = 5, so it sits 0 slots after the price wallet on the ring
+   owner now = (5 + 7) mod 8 = slot 4 -> 0x080857747a9baa9f53a68a20cd1e13b691641bc7; after the next hand-off -> 0xfc182245c87ab48b6a10e36fd262790de73707af
+   SEND NOW (window has about 37 minutes left): my transactions should be included by 0x080857747a9baa9f53a68a20cd1e13b691641bc7
+   my latest transactions, who included them, and who the code predicts:
+     block 14375181  2026-11-12 22:31:49 UTC  nonce 2  included by 0xc2afe610  predicted 0xc2afe610  MATCH
+     block 14375167  2026-11-12 22:31:30 UTC  nonce 1  included by 0xc2afe610  predicted 0xc2afe610  MATCH
+     block 14375151  2026-11-12 22:31:09 UTC  nonce 0  included by 0xc2afe610  predicted 0xc2afe610  MATCH
+
+Read-only. Nothing was sent, nothing was signed.

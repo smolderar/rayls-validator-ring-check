@@ -1,0 +1,19 @@
+1. Same-validator share in 3-hour bins around the fork block (bin = time of the second transaction)
+   -12 h to  -9 h: 7 of 50 = 14.0 %
+    -9 h to  -6 h: 12 of 62 = 19.4 %
+    -6 h to  -3 h: 6 of 69 = 8.7 %
+    -3 h to  +0 h: 6 of 56 = 10.7 %
+    +0 h to  +3 h: 65 of 71 = 91.5 %
+    +3 h to  +6 h: 61 of 71 = 85.9 %
+    +6 h to  +9 h: 45 of 48 = 93.8 %
+    +9 h to +12 h: 36 of 42 = 85.7 %
+2. Other wallets (not the price-feed wallet), pairs at most 1,000 blocks apart
+   BEFORE 24 of 193 = 12.4 %  (28 wallets)
+   AFTER  116 of 123 = 94.3 %  (17 wallets)
+   RECENT 245 of 262 = 93.5 %  (12 wallets)
+3. Newest validator 0xbbd0b352, last 24 hours
+   same-validator share outside its windows: 776 of 842 = 92.2 %
+   same-validator share touching its windows: 110 of 166 = 66.3 %
+   price-feed bursts on its turns: 35 bursts, first to last update 3.26 s on average, 6 s at most
+   price-feed bursts on other turns: 243 bursts, first to last update 2.95 s on average, 12 s at most
+   gaps where a burst switched validator: 20, from 0 s to 4 s (block timestamps)

@@ -1,0 +1,59 @@
+﻿
+
+NOV WEEK 2 - STEP 0 (read-only): sender-affinity fork check
+run at 2026-11-12 18:36:36 UTC
+
+== 1. Chain head ==
+  block 14364666 | 2026-11-12 18:36:34 UTC | epoch 197 | miner 0xbbd0b35294fff3981a7aeb2adb14f23f93bf9662
+
+== 2. Fork blocks from the node schedule (axyl c2a4ee6, schedule.rs lines 111-121) ==
+  893558 | 2026-05-14 15:39:06 UTC | epoch 14 round 127042 | miner 0xc2afe610a7cecc44ef8604fe9421271fe2990fe6 | txs 0 | TransactionLoadBalancing
+  12231705 | 2026-10-10 14:22:07 UTC | epoch 163 round 120774 | miner 0x17a9747596427f4960d5c494417ce6bf8b82bafe | txs 0 | OutputSeqNormalization + SenderAffinityLoadBalancing
+  13832605 | 2026-11-04 11:56:26 UTC | epoch 188 round 106758 | miner 0xbbd0b35294fff3981a7aeb2adb14f23f93bf9662 | txs 0 | Eip161EmptyAccountGuard
+
+== 3. Explorer sample before and after block 12,231,705 ==
+  explorer block_number paging honoured: True
+
+== BEFORE fork (blocks below 12,231,705) ==
+  200 transactions from explorer, blocks 12216633 to 12231501
+  time range (block headers): 2026-10-10 08:47:23 UTC to 2026-10-10 14:17:35 UTC
+  block miner (beneficiary) per transaction:
+     0xeecf1a05b55e27c19d999471376192880aaa78bc : 36
+     0x17a9747596427f4960d5c494417ce6bf8b82bafe : 36
+     0x90aed90ede55e7f784523303e12f3457d6337789 : 35
+     0x080857747a9baa9f53a68a20cd1e13b691641bc7 : 31
+     0xfc182245c87ab48b6a10e36fd262790de73707af : 27
+     0xc2afe610a7cecc44ef8604fe9421271fe2990fe6 : 19
+     0xba74449591e403e012351095b566cf15417c2930 : 16
+  busiest senders:
+     0x339d413ccefd986b1b3647a9cfa9cbbe70a30749 : 189 txs
+     0x14f918b1739e325ef588b725f1ee63c6215db335 : 11 txs
+  consecutive-nonce pairs from the same sender, same epoch: 198
+  of those, included by the SAME block miner: 94 (47.5 %)
+
+== AFTER fork (blocks from 12,231,705) ==
+  200 transactions from explorer, blocks 12237371 to 12251571
+  time range (block headers): 2026-10-10 16:27:39 UTC to 2026-10-10 21:42:33 UTC
+  block miner (beneficiary) per transaction:
+     0xba74449591e403e012351095b566cf15417c2930 : 41
+     0xc2afe610a7cecc44ef8604fe9421271fe2990fe6 : 33
+     0xfc182245c87ab48b6a10e36fd262790de73707af : 32
+     0x90aed90ede55e7f784523303e12f3457d6337789 : 27
+     0xeecf1a05b55e27c19d999471376192880aaa78bc : 25
+     0x080857747a9baa9f53a68a20cd1e13b691641bc7 : 24
+     0x17a9747596427f4960d5c494417ce6bf8b82bafe : 18
+  busiest senders:
+     0x339d413ccefd986b1b3647a9cfa9cbbe70a30749 : 172 txs
+     0xb8ff877ed78ba520ece21b1de7843a8a57ca47cb : 9 txs
+     0xe93685f3bba03016f02bd1828badd6195988d950 : 6 txs
+     0x00025d77f296c06803efd0de150ad1e10b56fb11 : 5 txs
+     0x4293485e0ddb6a6ef5b6ef7a30a952335be97703 : 4 txs
+  consecutive-nonce pairs from the same sender, same epoch: 193
+  of those, included by the SAME block miner: 181 (93.8 %)
+
+== 4. STEP 0 verdict ==
+  [PASS] explorer paging by block works
+  [PASS] block miner varies (distinct miners before: 7, after: 7)
+  [PASS] enough same-sender consecutive pairs (before: 198, after: 193; need 10+ each)
+
+Sample rows saved in step0-sample.csv. Read-only: nothing was sent, nothing was signed.

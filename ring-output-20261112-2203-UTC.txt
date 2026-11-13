@@ -1,0 +1,29 @@
+﻿
+Rayls Public Chain: the validator ring, rebuilt from the registry and the code
+run at 2026-11-12 22:03:13 UTC
+
+== ConsensusRegistry 0x07e17e17e17e17e17e17e17e17e17e17e17e17e1, epoch 197: 8 committee validators ==
+   slot  authority id = BLAKE3(BLS key)   BLS key bytes   validator (block miner)
+      0  0x15bc4f24bcc46d6a...        96             0xba74449591e403e012351095b566cf15417c2930
+      1  0x5f1f0471ecc06665...        96             0x90aed90ede55e7f784523303e12f3457d6337789
+      2  0x752b2f51baf259d9...        96             0xbbd0b35294fff3981a7aeb2adb14f23f93bf9662
+      3  0x872d5544695e2290...        96             0xc2afe610a7cecc44ef8604fe9421271fe2990fe6
+      4  0x89b4f777d6b11fe3...        96             0x080857747a9baa9f53a68a20cd1e13b691641bc7
+      5  0xa834f486d88a6cba...        96             0xfc182245c87ab48b6a10e36fd262790de73707af
+      6  0xc2cbe567fd8a93ef...        96             0x17a9747596427f4960d5c494417ce6bf8b82bafe
+      7  0xedfac3dace8f5716...        96             0xeecf1a05b55e27c19d999471376192880aaa78bc
+   ring order from the code: 0xba744495 -> 0x90aed90e -> 0xbbd0b352 -> 0xc2afe610 -> 0x08085774 -> 0xfc182245 -> 0x17a97475 -> 0xeecf1a05 -> (back to start)
+
+== Order in which the price wallet met each validator (step1-data.csv) ==
+   AFTER  0xfc182245 -> 0x17a97475 -> 0xeecf1a05 -> 0xba744495 -> 0x90aed90e -> 0xc2afe610 -> 0x08085774
+          same cyclic order as the ring from the code: YES
+   RECENT 0xeecf1a05 -> 0xba744495 -> 0x90aed90e -> 0xbbd0b352 -> 0xc2afe610 -> 0x08085774 -> 0xfc182245 -> 0x17a97475
+          same cyclic order as the ring from the code: YES
+
+== Live prediction from the code formula ==
+   rayls_latestHeader reply: {"jsonrpc":"2.0","id":1,"error":{"code":-32603,"message":"Internal error"}}
+   chain head block 14373907 at 2026-11-12 22:03:14 UTC, last 2048 blocks took 1.34 s per block
+
+   price wallet 0x339d413ccefd986b1b3647a9cfa9cbbe70a30749: FxHash = 2206862125807513669, natural slot = FxHash mod 8 = 5
+
+Read-only. Nothing was sent, nothing was signed.

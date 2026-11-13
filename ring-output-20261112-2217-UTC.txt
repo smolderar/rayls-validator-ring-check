@@ -1,0 +1,47 @@
+﻿
+Rayls Public Chain: the validator ring, rebuilt from the registry and the code
+run at 2026-11-12 22:17:29 UTC
+
+== ConsensusRegistry 0x07e17e17e17e17e17e17e17e17e17e17e17e17e1, epoch 197: 8 committee validators ==
+   slot  authority id = BLAKE3(BLS key)   BLS key bytes   validator (block miner)
+      0  0x15bc4f24bcc46d6a...        96             0xba74449591e403e012351095b566cf15417c2930
+      1  0x5f1f0471ecc06665...        96             0x90aed90ede55e7f784523303e12f3457d6337789
+      2  0x752b2f51baf259d9...        96             0xbbd0b35294fff3981a7aeb2adb14f23f93bf9662
+      3  0x872d5544695e2290...        96             0xc2afe610a7cecc44ef8604fe9421271fe2990fe6
+      4  0x89b4f777d6b11fe3...        96             0x080857747a9baa9f53a68a20cd1e13b691641bc7
+      5  0xa834f486d88a6cba...        96             0xfc182245c87ab48b6a10e36fd262790de73707af
+      6  0xc2cbe567fd8a93ef...        96             0x17a9747596427f4960d5c494417ce6bf8b82bafe
+      7  0xedfac3dace8f5716...        96             0xeecf1a05b55e27c19d999471376192880aaa78bc
+   ring order from the code: 0xba744495 -> 0x90aed90e -> 0xbbd0b352 -> 0xc2afe610 -> 0x08085774 -> 0xfc182245 -> 0x17a97475 -> 0xeecf1a05 -> (back to start)
+
+== Order in which the price wallet met each validator (step1-data.csv) ==
+   AFTER  0xfc182245 -> 0x17a97475 -> 0xeecf1a05 -> 0xba744495 -> 0x90aed90e -> 0xc2afe610 -> 0x08085774
+          same cyclic order as the ring from the code: YES
+   RECENT 0xeecf1a05 -> 0xba744495 -> 0x90aed90e -> 0xbbd0b352 -> 0xc2afe610 -> 0x08085774 -> 0xfc182245 -> 0x17a97475
+          same cyclic order as the ring from the code: YES
+
+== Where the price wallet is on the ring right now ==
+   chain head block 14374542 at 2026-11-12 22:17:30 UTC, last 2048 blocks took 1.34 s per block
+   price wallet natural slot = FxHash mod 8 = 5
+   latest price updates (newest first):
+     block 14374483  2026-11-12 22:16:10 UTC  nonce 334913  included by 0xc2afe610  (slot 3)
+     block 14374480  2026-11-12 22:16:06 UTC  nonce 334912  included by 0xc2afe610  (slot 3)
+     block 14374264  2026-11-12 22:11:15 UTC  nonce 334910  included by 0xc2afe610  (slot 3)
+     block 14374264  2026-11-12 22:11:15 UTC  nonce 334911  included by 0xc2afe610  (slot 3)
+     block 14374263  2026-11-12 22:11:13 UTC  nonce 334909  included by 0xc2afe610  (slot 3)
+     block 14374046  2026-11-12 22:06:21 UTC  nonce 334908  included by 0xc2afe610  (slot 3)
+     block 14374045  2026-11-12 22:06:20 UTC  nonce 334907  included by 0xc2afe610  (slot 3)
+     block 14374043  2026-11-12 22:06:17 UTC  nonce 334906  included by 0xc2afe610  (slot 3)
+     block 14373820  2026-11-12 22:01:17 UTC  nonce 334903  included by 0xc2afe610  (slot 3)
+     block 14373820  2026-11-12 22:01:17 UTC  nonce 334904  included by 0xc2afe610  (slot 3)
+     block 14373820  2026-11-12 22:01:17 UTC  nonce 334905  included by 0xc2afe610  (slot 3)
+     block 14373819  2026-11-12 22:01:17 UTC  nonce 334902  included by 0xc2afe610  (slot 3)
+   now on slot 3 (0xc2afe610), so the window number mod 8 = (3 - 5) mod 8 = 6
+   this window began by block 14373816 (2026-11-12 22:01:13 UTC); next hand-off expected near block 14375871, in about 30 minutes (around 22:47 UTC), to slot 4 -> 0x08085774
+
+== My wallet 0xb547db1c6f77b33951fd4685f409969a9e805c30 ==
+   FxHash = 13985822436309637487, natural slot = FxHash mod 8 = 7, so it sits 2 slots after the price wallet on the ring
+   owner now = (7 + 6) mod 8 = slot 5 -> 0xfc182245c87ab48b6a10e36fd262790de73707af; after the next hand-off -> 0x17a9747596427f4960d5c494417ce6bf8b82bafe
+   SEND NOW (window has about 30 minutes left): my transactions should be included by 0xfc182245c87ab48b6a10e36fd262790de73707af
+
+Read-only. Nothing was sent, nothing was signed.
